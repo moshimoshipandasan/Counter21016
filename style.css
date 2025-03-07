@@ -5,6 +5,74 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.qr-code {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 100;
+}
+
+.qr-code img {
+    width: 80px;
+    height: 80px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.qr-code img:hover {
+    transform: scale(1.1);
+}
+
+/* モーダルスタイル */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+#modal-qr-img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border: 3px solid #007bff;
+    border-radius: 10px;
+}
+
 body {
     background-color: #f0f8ff;
     color: #333;
@@ -233,6 +301,38 @@ input[type="range"] {
 
 .info-panel p {
     margin-bottom: 10px;
+}
+
+.footer {
+    margin-top: 20px;
+    text-align: center;
+    padding: 15px 0;
+    border-top: 1px solid #dee2e6;
+}
+
+.youtube-link {
+    display: inline-flex;
+    align-items: center;
+    color: #ff0000;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.youtube-link:hover {
+    color: #cc0000;
+    text-decoration: underline;
+}
+
+.youtube-icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff0000"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 
 @media (max-width: 600px) {

@@ -327,4 +327,26 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // 初期コメントの表示
     updateRelationshipComment();
+    
+    // QRコードモーダル機能
+    const qrCodeImg = document.getElementById('qr-code-img');
+    const qrModal = document.getElementById('qr-modal');
+    const closeBtn = document.querySelector('.close');
+    
+    // QRコードをクリックしたときにモーダルを表示
+    qrCodeImg.addEventListener('click', () => {
+        qrModal.style.display = 'block';
+    });
+    
+    // 閉じるボタンをクリックしたときにモーダルを閉じる
+    closeBtn.addEventListener('click', () => {
+        qrModal.style.display = 'none';
+    });
+    
+    // モーダルの外側をクリックしたときにモーダルを閉じる
+    window.addEventListener('click', (event) => {
+        if (event.target === qrModal) {
+            qrModal.style.display = 'none';
+        }
+    });
 });
