@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f8ff;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.counter-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.counter {
+    background-color: white;
+    border-radius: 10px;
+    padding: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.counter:hover {
+    transform: translateY(-5px);
+}
+
+.counter h2 {
+    text-align: center;
+    margin-bottom: 5px;
+    color: #2c3e50;
+    font-size: 1.2rem;
+}
+
+.decimal-value.highlight {
+    animation: highlight 0.5s ease;
+}
+
+@keyframes highlight {
+    0% { background-color: #f8f9fa; }
+    50% { background-color: #e2e6ea; }
+    100% { background-color: #f8f9fa; }
+}
+
+.binary-hex-relation, .hex-binary-relation {
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+}
+
+.binary-groups, .hex-digits {
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+}
+
+.decimal-value {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 8px;
+    margin: 5px 0;
+    color: #007bff;
+}
+
+.binary-group, .hex-digit {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 5rem;
+    font-weight: bold;
+    margin: 2px;
+}
+
+.binary-group {
+    background-color: rgba(40, 167, 69, 0.1);
+    border: 1px solid rgba(40, 167, 69, 0.3);
+    color: #28a745;
+}
+
+.hex-digit {
+    background-color: rgba(220, 53, 69, 0.1);
+    border: 1px solid rgba(220, 53, 69, 0.3);
+    color: #dc3545;
+}
+
+.explanation {
+    font-size: 0.8rem;
+    color: #6c757d;
+    margin-top: 5px;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.counter-container {
+    flex: 1;
+    order: 1;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.calculation-panel {
+    flex: 1;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-height: 180px;
+    max-width: 400px;
+    order: 2;
+}
+
+.calculation-panel h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.calculation-content {
+    font-family: 'Courier New', Courier, monospace;
+    white-space: pre;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    border: 1px solid #dee2e6;
+    overflow-x: auto;
+}
+
+.show-calc-btn {
+    background-color: #17a2b8;
+    margin-top: 10px;
+    width: 48%;
+    max-width: 200px;
+    margin-right: 2%;
+}
+
+.show-calc-btn:hover {
+    background-color: #138496;
+}
+
+#show-binary-calculation {
+    background-color: #28a745;
+}
+
+#show-binary-calculation:hover {
+    background-color: #218838;
+}
+
+#show-hex-calculation {
+    background-color: #dc3545;
+}
+
+#show-hex-calculation:hover {
+    background-color: #c82333;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0069d9;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+#reset {
+    background-color: #dc3545;
+}
+
+#reset:hover {
+    background-color: #c82333;
+}
+
+.speed-control, .sound-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+input[type="range"] {
+    width: 100px;
+}
+
+.info-panel {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+}
+
+.info-panel h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.info-panel p {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+    .controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .display {
+        font-size: 1.8rem;
+    }
+}

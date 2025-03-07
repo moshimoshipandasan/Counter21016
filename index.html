@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数値システム比較カウンター</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="counter-panel">
+            <div class="counter decimal">
+                <h2>10進法 (Decimal)</h2>
+                <div class="decimal-value" id="decimal-value">0</div>
+                <div class="explanation">
+                    <p>私たちが日常的に使用する数値システム。0〜9の数字を使用します。</p>
+                </div>
+            </div>
+            
+            <div class="counter binary">
+                <h2>2進法 (Binary)</h2>
+                <div class="binary-hex-relation">
+                    <div class="binary-groups" id="binary-groups"></div>
+                </div>
+                <div class="explanation">
+                    <p>コンピュータの基本となる数値システム。0と1のみを使用します。</p>
+                    <p><strong>注：</strong> 2進法の4桁が16進法の1桁に対応します。</p>
+                </div>
+            </div>
+            
+            <div class="counter hexadecimal">
+                <h2>16進法 (Hexadecimal)</h2>
+                <div class="hex-binary-relation">
+                    <div class="hex-digits" id="hex-digits"></div>
+                </div>
+                <div class="explanation">
+                    <p>プログラミングでよく使われる数値システム。0〜9とA〜Fを使用します。</p>
+                    <p><strong>注：</strong> 16進法の1桁は2進法の4桁を表します。</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-container">
+            <div class="counter-container">
+                <div class="controls">
+                    <button id="increment">カウントアップ</button>
+                    <button id="decrement">カウントダウン</button>
+                    <button id="reset">リセット</button>
+                    <div class="speed-control">
+                        <label for="auto-count">自動カウント:</label>
+                        <input type="checkbox" id="auto-count">
+                        <label for="count-speed">速度:</label>
+                        <input type="range" id="count-speed" min="1" max="10" value="5">
+                    </div>
+                    <div class="sound-control">
+                        <label for="sound-toggle">音:</label>
+                        <input type="checkbox" id="sound-toggle" checked>
+                    </div>
+                    <button id="show-binary-calculation" class="show-calc-btn">2進法変換を表示</button>
+                    <button id="show-hex-calculation" class="show-calc-btn">16進法変換を表示</button>
+                </div>
+            </div>
+            
+            <div class="calculation-panel" id="calculation-panel">
+                <h3>10進法から2進法への変換過程</h3>
+                <div class="calculation-content" id="calculation-content">
+                    <p>計算過程を表示するには「計算過程を表示」ボタンをクリックしてください。</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-panel">
+            <h3>数値システムについて</h3>
+            <p>このカウンターは、同じ数値が異なる数値システムでどのように表現されるかを示しています。</p>
+            <p>10進法は私たちが日常的に使用する数値システムで、0から9までの10個の数字を使用します。</p>
+            <p>2進法はコンピュータが内部で使用する基本的な数値システムで、0と1の2つの数字のみを使用します。</p>
+            <p>16進法はプログラミングでよく使用される数値システムで、0から9までの数字とAからFまでの文字を使用して、合計16個の記号を使います。</p>
+        </div>
+    </div>
+    
+    <audio id="count-sound" src="count.mp3" preload="auto"></audio>
+    <audio id="reset-sound" src="reset.mp3" preload="auto"></audio>
+    
+    <script src="script.js"></script>
+</body>
+</html>
